@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load widget_tweaks %}
+
+<div class="px-4 py-5 px-md-5">
+    <div class="container">
+        <div class="row gx-lg-5 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="my-5 display-3 fw-bold ls-tight">
+                    <strong> Simple Authentication <br /></strong>
+                    <span class="text-primary">App</span>
+                </h1>
+                <p style="color: hsl(217, 10%, 50.8%)">
+                    Authentication App made with Django Framework. <br />
+                    By Isco.
+                </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="card">
+                    <div class="card-body py-5 px-md-5">
+
+                        {% for error in errors %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+
+                        <form action="{% url 'signup' %}" method="post">
+                            {% csrf_token %}
+                            <section class="row form-outline mb-3">
+                                <div class="col-12 col-lg-6">
+                                    {{ form.first_name.label }}
+                                    {{ form.first_name|add_class:"form-control mb-3" }}
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    {{ form.last_name.label }}
+                                    {{ form.last_name|add_class:"form-control mb-3" }}
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    {{ form.username.label }}
+                                    {{ form.username|add_class:"form-control mb-3" }}
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    {{ form.email.label }}
+                                    {{ form.email|add_class:"form-control mb-3" }}
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    {{ form.password1.label }}
+                                    {{ form.password1|add_class:"form-control mb-3" }}
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    {{ form.password2.label }}
+                                    {{ form.password2|add_class:"form-control mb-3" }}
+                                </div>
+                            </section>
+
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
+
+                            <div class="text-center">
+                                <p>Are a member? <a href="{% url 'login' %}">Login</a></p>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
