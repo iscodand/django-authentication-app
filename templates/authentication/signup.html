@@ -9,8 +9,8 @@
 
 <div class="py-5 px-md-5 container col-8">
     <div class="row gx-lg-5 align-items-center center-block">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-            <h1 class="my-5 display-3 fw-bolder ls-tight">
+        <div class="col-lg-6 mb-lg-0">
+            <h1 class="my-5 display-5 fw-bolder ls-tight">
                 <strong> Simple Authentication <br /></strong>
                 <span class="text-primary">App</span>
             </h1>
@@ -35,24 +35,24 @@
                             {% csrf_token %}
                             
                             <section class="row form-outline mb-3">
-                                <div class="col-12 col-lg-12">
+                                <div class="label-float col-12 col-lg-12">
                                     {{ form.username.label }}
                                     {% render_field form.username class="form-control mb-3"%}
                                 </div>
-                                <div class="col-12 col-lg-12">
+                                <div class="label-float col-12 col-lg-12">
                                     {{ form.email.label }}
-                                    {% render_field form.email class="form-control mb-3" %}
+                                    {% render_field form.email class="form-control mb-3"%}
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <div class="label-float col-12 col-lg-6">
                                     {{ form.password1.label }}
                                     {% render_field form.password1 class="form-control mb-3"%}
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <div class="label-float col-12 col-lg-6">
                                     {{ form.password2.label }}
-                                    {% render_field form.password1 class="form-control mb-3"%}
+                                    {% render_field form.password2 class="form-control mb-3"%}
                                 </div>
                             </section>
-
+                            
                             {% include 'partials/_alert.html' %}
                             
                             <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>

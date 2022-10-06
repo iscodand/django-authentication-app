@@ -4,11 +4,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     font-family: "montserrat", sans-serif;
     font-weight: 500;
 }
 
 .form input {
     border: none;
+}
+
+.label-float {
+    position: relative;
+    padding-top: 13px;
+}
+
+.label-float input {
+    border: 0;
+    border-bottom: 2px solid lightgrey;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.label-float input::placeholder {
+    color: transparent;
+}
+
+.label-float label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+}
+
+.label-float input:focus+label,
+.label-float input:not(:placeholder-shown)+label {
+    font-size: 13px;
+    margin-top: 0;
+    color: #3951b2;
 }
