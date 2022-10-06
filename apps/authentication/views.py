@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-
+from django.contrib import messages
 
 def index(request):
     return render(request, 'index.html')
@@ -14,7 +14,11 @@ def signup(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "User registered successfully!")
             return redirect('login')
+        else:
+            for value in form.errors.values():
+                messages.error(request, f'{value}')
 
     form = SignUpForm()
     context = {'form': form}
