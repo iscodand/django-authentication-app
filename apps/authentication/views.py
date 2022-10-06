@@ -9,6 +9,7 @@ def index(request):
 
 
 def signup(request):
+    form = SignUpForm(request.POST or None)
     if request.method == 'POST':
         form = SignUpForm(request.POST)
 
@@ -20,9 +21,7 @@ def signup(request):
             for value in form.errors.values():
                 messages.error(request, f'{value}')
 
-    form = SignUpForm()
-    context = {'form': form}
-    return render(request, 'authentication/signup.html', context)
+    return render(request, 'authentication/signup.html', {'form': form})
 
 
 def login(request):
