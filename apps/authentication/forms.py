@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from .validation import *
+from django.contrib.auth.forms import AuthenticationForm 
 
 
 class SignUpForm(forms.ModelForm):
@@ -32,3 +33,8 @@ class SignUpForm(forms.ModelForm):
                 self.add_error(error, error_message)
                 
         return self.cleaned_data
+    
+    
+class LoginForm(forms.ModelForm):
+    username_or_email = forms.CharField(label="Username or Email", widget = forms.CharField)
+    password = forms.CharField(label="Password", widget = forms.PasswordInput)

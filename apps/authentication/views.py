@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
-from .forms import SignUpForm
+from .forms import SignUpForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
+from django.contrib.auth.models import User
+
 
 def index(request):
     return render(request, 'index.html')
@@ -25,6 +27,8 @@ def signup(request):
 
 
 def login(request):
+    form = LoginForm(request.POST or None)
+    
     return render(request, 'authentication/login.html')
 
 
