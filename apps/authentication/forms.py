@@ -26,7 +26,7 @@ class SignUpForm(forms.ModelForm):
             error_list['email'] = 'Email already registered!'
         
         if User.objects.filter(username=username).exists():
-            error_list['email'] = 'Username already registered!'
+            error_list['username'] = 'Username already registered!'
 
         if error_list is not None:
             for error in error_list:
