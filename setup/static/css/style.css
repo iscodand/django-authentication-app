@@ -14,3 +14,18 @@ body {
 .form input {
     border: none;
 }
+
+#forgot-password {
+    color: hsl(217, 10%, 50.8%);
+    font-size: 13px;
+}
+
+#send-email-instruction {
+    color: hsl(217, 10%, 50.8%);
+    font-size: 13px;
+}
+
+#reset-sent {
+    color: rgb(120, 125, 133);
+    font-size: 15px;
+}

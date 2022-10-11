@@ -62,7 +62,7 @@ db.sqlite3
 db.sqlite3-journal
 static/admin
 static/css
-
+env.py
 
 # Flask stuff:
 instance/
