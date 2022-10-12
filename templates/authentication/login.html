@@ -6,59 +6,48 @@
 
 {% load widget_tweaks %}
 
+{% include 'partials/_title_second_model.html' %}
 
-<div class="py-5 px-md-5 container col-8">
-    <div class="row gx-lg-5 align-items-center center-block">
-        <div class="col-lg-6 mb-lg-0">
-            <h1 class="my-5 display-5 fw-bolder ls-tight">
-                <strong> Simple Authentication <br /></strong>
-                <span class="text-primary">App</span>
-            </h1>
-            <p style="color: hsl(217, 10%, 50.8%)">
-                Authentication App made with Django Framework. <br />
-                By Isco.
-            </p>
-        </div>
-        <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="section-heading text-center">
-                                <h6>Login Account</h6>
-                                <hr/>
-                            </div>
-                        </div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h6>Login</h6>
+                        <hr />
                     </div>
-                    <div class="form">
-                        <form action="{% url 'login' %}" method="post">
-                            {% csrf_token %}
-                            
-                            <section class="row form-outline mb-3">
-                                <div class="label-float col-12 col-lg-12">
-                                    {{ form.email.label }}
-                                    {% render_field form.email class="form-control mb-3"%}
-                                </div>
-                                <div class="label-float col-12 col-lg-12">
-                                    {{ form.password.label }}
-                                    {% render_field form.password class="form-control mb-3"%}
-                                </div>
-                            </section>
-                            
-                            {% include 'partials/_alert.html' %}
-                            
-                            <p id="forgot-password" class="text-right">Forgot your password? Recover <a href="{% url 'reset_password' %}"><strong>here</strong></a>!</p>
-                            <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
-                            
-                            <div class="text-center">
-                                <p>Not are a member? <a href="{% url 'signup' %}"><strong>Sign Up</strong></a></p>
-                            </div>
-                        </div>
-                    </form>
                 </div>
+            </div>
+            <div class="form">
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+
+                    <section class="row form-outline mb-3">
+                        <div class="label-float col-12 col-lg-12">
+                            {{ form.email.label }}
+                            {% render_field form.email class="form-control mb-3"%}
+                        </div>
+                        <div class="label-float col-12 col-lg-12">
+                            {{ form.password.label }}
+                            {% render_field form.password class="form-control mb-3"%}
+                        </div>
+                    </section>
+
+                    {% include 'partials/_alert.html' %}
+
+                    <p id="forgot-password" class="text-right">Forgot your password? Recover <a
+                            href="{% url 'reset_password' %}"><strong>here</strong></a>!</p>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+
+                    <div class="text-center">
+                        <p>Not are a member? <a href="{% url 'signup' %}"><strong>Sign Up</strong></a></p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
 
 {% endblock %}
