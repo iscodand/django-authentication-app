@@ -39,3 +39,9 @@ class SignUpForm(forms.ModelForm):
 class LoginForm(forms.Form):
     email = forms.EmailField(label="Email")
     password = forms.CharField(label="Password", widget = forms.PasswordInput)
+
+
+class ChangePasswordForm(forms.Form):
+    old_password = forms.CharField(label="Old Password", widget=forms.PasswordInput)
+    password1 = forms.CharField(label="Set Password", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)

@@ -54,7 +54,3 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
-
-
-def change_password(request):
-    pass
