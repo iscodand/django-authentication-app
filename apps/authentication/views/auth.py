@@ -47,6 +47,7 @@ def login(request):
                 return redirect('login')
                 
     form = LoginForm()
+    
     context = {'form': form}
     return render(request, 'authentication/login.html', context)
 

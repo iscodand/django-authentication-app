@@ -37,3 +37,7 @@ body {
     color: rgb(120, 125, 133);
     font-size: 11px;
 }
+
+.alert {
+    width: 150px;
+}
