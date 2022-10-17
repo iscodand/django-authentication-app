@@ -24,8 +24,7 @@ def change_password(request):
             messages.success(request, 'Your password was succesfully updated!')
             return redirect('home')
         else:
-            for value in form.errors.values():
-                messages.error(request, value)
+            messages.error(request, 'Ops, an error ocurred! Please, try again :)')
 
     form = PasswordChangeForm(request.user)
     context = {'form': form}
