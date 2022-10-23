@@ -16,7 +16,7 @@
  ![image](https://user-images.githubusercontent.com/81825284/196500096-77bee973-8d4e-4ee2-972b-9e1619586fa7.png)
  
  ## Tech Stack
-![Stacks](https://skillicons.dev/icons?i=py,django,html,css,bootstrap,vscode,git&theme=dark)
+![Stacks](https://skillicons.dev/icons?i=py,django,docker,html,css,bootstrap,vscode,git&theme=dark)
 
 ``Clean Code Practices``
 
