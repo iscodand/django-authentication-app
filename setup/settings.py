@@ -14,7 +14,6 @@ import os
 import sys
 from django.contrib.messages import constants as messages
 from pathlib import Path
-from dotenv import load_dotenv
 from .env import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,8 +29,7 @@ SECRET_KEY = return_secret_key()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -83,11 +81,11 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'AuthenticationProject',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
